@@ -382,38 +382,141 @@ height: 18px;
 </head>
 <body>
 <header class="o-header" role="presentation">
-<div class="header-site-logo" id="ntm-logo-wrap" style="display: flex; align-items: center;">
-<a href="index.htm" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
-<img src="mkbimg/newtech-logo.png" alt="New Tech Makina" style="height: 50px; width: 50px; border-radius: 50%; object-fit: cover; vertical-align: middle;">
-<span class="ntm-text-main" style="font-family: Arial, Helvetica, sans-serif; font-weight: 800; font-style: italic; font-size: 24px; letter-spacing: 0.5px; vertical-align: middle; line-height: 50px;"><span class="ntm-newtech">NEW TECH</span> <span class="ntm-makina">MAKİNA</span></span>
-</a>
+<div class="ntm-header-inner">
+  <a href="index.htm" class="ntm-logo-link">
+    <img src="mkbimg/newtech-logo.png" alt="New Tech Makina" class="ntm-logo-img">
+    <span class="ntm-logo-text"><span class="ntm-newtech">NEW TECH</span> <span class="ntm-makina">MAKİNA</span></span>
+  </a>
+  <div class="header-right">
+    <div class="menu"><ul id="menu-main-menu" class=""><li><a class="mn-menu text-uppercase" href="#">Kurumsal</a> 
+    <ul class="sub-menu">
+    <li class="item"><a href="#hakkimizda"><span class="text-uppercase">Hakkımızda</span><div class="sv"><svg xmlns="http://www.w3.org/2000/svg" width="9.071" height="16.143" viewbox="0 0 9.071 16.143"><path id="Icon_feather-chevron-right" data-name="Icon feather-chevron-right" d="M13.5,22.314l6.657-6.657L13.5,9" transform="translate(-12.086 -7.586)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div></a> </li>
+    </ul>
+    </li>
+    <li><a class="mn-menu text-uppercase" href="#faaliyet-alanlari">Faaliyet Alanları</a> </li>
+    <li><a class="mn-menu text-uppercase" href="#haberler">Haberler</a> </li>
+    <li><a class="mn-menu text-uppercase" href="#iletisim">İletişim</a> </li>
+    </ul></div>
+  </div>
+  <div class="mobile-right">
+    <div class="mobile-search"><svg xmlns="http://www.w3.org/2000/svg" width="18.613" height="18.613" viewbox="0 0 18.613 18.613">
+    <g id="Icon_feather-search" data-name="Icon feather-search" transform="translate(0.75 0.75)">
+    <path id="Path_1805" data-name="Path 1805" d="M19.435,11.968A7.468,7.468,0,1,1,11.968,4.5,7.468,7.468,0,0,1,19.435,11.968Z" transform="translate(-4.5 -4.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+    <path id="Path_1806" data-name="Path 1806" d="M29.035,29.035l-4.06-4.06" transform="translate(-12.233 -12.233)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+    </g>
+    </svg></div>
+    <div class="mobile-menu"></div>
+  </div>
+  <div class="mobile-menu-toggle">
+    <div id="menu-main-menu-1" class="mb-menu"><div class="mb-item"><a class="text-uppercase" href="#">Kurumsal</a> 
+    <div class="mb-sub-menu">
+    <div class="mb-item"><a class="text-uppercase" href="#hakkimizda">Hakkımızda</a> </div>
+    </div>
+    </div>
+    <div class="mb-item"><a class="text-uppercase" href="#faaliyet-alanlari">Faaliyet Alanları</a> </div>
+    <div class="mb-item"><a class="text-uppercase" href="#haberler">Haberler</a> </div>
+    <div class="mb-item"><a class="text-uppercase" href="#iletisim">İletişim</a> </div>
+    </div>
+    <div class="mb-social">
+    <div class="sc">
+    <a href="https://twitter.com/newtechmachineenergy" rel="external" target="_blank">
+    <img src="wp-content/themes/newtech/images/hd-twitter.png" alt="twitter">
+    </a>
+    </div>
+    <div class="sc">
+    <a href="https://www.youtube.com/user/newtechmachineenergy Grubu" rel="external" target="_blank">
+    <img src="wp-content/themes/newtech/images/hd-youtube.png" alt="youtube">
+    </a>
+    </div>
+    <div class="sc">
+    <a href="https://www.instagram.com/newtechmachineenergy/" rel="external" target="_blank">
+    <img src="wp-content/themes/newtech/images/hd-instagram.png" alt="instagram">
+    </a>
+    </div>
+    <div class="sc">
+    <a href="https://www.linkedin.com/authwall?trk=qf&original_referer=https://www.newtechmachineenergy.com.tr/&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fnewtechmachineenergy-holding%2Fabout%2F" rel="external" target="_blank">
+    <img src="wp-content/themes/newtech/images/hd-linkedin.png" alt="linkedin">
+    </a>
+    </div>
+    </div>
+  </div>
 </div>
 
 <style>
-  /* Logo + yaziyi header icinde tam ortala */
-  #ntm-logo-wrap {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 30%;
+  /* === HEADER SIFIRDAN TASARIM === */
+  .o-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 111;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
-  /* "NEW TECH" yazisi scroll'da siyah olacak, "MAKİNA" her zaman kirmizi kalacak */
-  #ntm-logo-wrap .ntm-newtech {
+  .ntm-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    height: 70px;
+  }
+  /* Logo */
+  .ntm-logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .ntm-logo-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .ntm-logo-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    line-height: 1;
+  }
+  .ntm-newtech {
     color: #fff;
-    transition: color 0.25s ease;
+    transition: color 0.3s ease;
   }
-  body.ntm-scrolled #ntm-logo-wrap .ntm-newtech {
-    color: #000000 !important;
+  .ntm-makina {
+    color: #D62828;
+    transition: color 0.3s ease;
   }
-  #ntm-logo-wrap .ntm-makina {
-    color: #D62828 !important;
+  /* Scroll'da renk degisimi */
+  body.ntm-scrolled .o-header {
+    background-color: rgba(255,255,255,0.97);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+  }
+  body.ntm-scrolled .ntm-newtech {
+    color: #0B1F33;
+  }
+  body.ntm-scrolled .ntm-makina {
+    color: #D62828;
+  }
+  body.ntm-scrolled .nav-list>li>a {
+    color: #000;
+  }
+  body.ntm-scrolled .nav-list>li>a::before {
+    background-color: #000;
+  }
+  body.ntm-scrolled .mnu-btn {
+    fill: #000;
+  }
+  body.ntm-scrolled .mobile-search svg g path {
+    stroke: #000;
   }
 </style>
 
 <script>
   (function () {
-    var THRESHOLD = 80; // bu piksel kadar kaydırınca renk değişsin (ihtiyaca göre ayarla)
-
+    var THRESHOLD = 80;
     function updateLogoColor() {
       if (window.scrollY > THRESHOLD) {
         document.body.classList.add('ntm-scrolled');
@@ -421,71 +524,10 @@ height: 18px;
         document.body.classList.remove('ntm-scrolled');
       }
     }
-
     window.addEventListener('scroll', updateLogoColor);
-    updateLogoColor(); // sayfa yüklendiğinde de kontrol et
+    updateLogoColor();
   })();
 </script>
-<div class="header-right">
-<div class="menu"><ul id="menu-main-menu" class=""><li><a class="mn-menu text-uppercase" href="#">Kurumsal</a> 
-<ul class="sub-menu">
-<li class="item"><a href="#hakkimizda"><span class="text-uppercase">Hakkımızda</span><div class="sv"><svg xmlns="http://www.w3.org/2000/svg" width="9.071" height="16.143" viewbox="0 0 9.071 16.143"><path id="Icon_feather-chevron-right" data-name="Icon feather-chevron-right" d="M13.5,22.314l6.657-6.657L13.5,9" transform="translate(-12.086 -7.586)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div></a> </li>
-</ul>
-</li>
-<li><a class="mn-menu text-uppercase" href="#faaliyet-alanlari">Faaliyet Alanları</a> 
-</li>
-<li><a class="mn-menu text-uppercase" href="#haberler">Haberler</a> </li>
-</li>
-<li><a class="mn-menu text-uppercase" href="#iletisim">İletişim</a> </li>
-</ul></div>
-</div>
-<div class="mobile-right">
-<div class="mobile-search"><svg xmlns="http://www.w3.org/2000/svg" width="18.613" height="18.613" viewbox="0 0 18.613 18.613">
-<g id="Icon_feather-search" data-name="Icon feather-search" transform="translate(0.75 0.75)">
-<path id="Path_1805" data-name="Path 1805" d="M19.435,11.968A7.468,7.468,0,1,1,11.968,4.5,7.468,7.468,0,0,1,19.435,11.968Z" transform="translate(-4.5 -4.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-<path id="Path_1806" data-name="Path 1806" d="M29.035,29.035l-4.06-4.06" transform="translate(-12.233 -12.233)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-</g>
-</svg></div>
-<div class="mobile-menu"></div>
-</div>
-<div class="mobile-menu-toggle">
-<div id="menu-main-menu-1" class="mb-menu"><div class="mb-item"><a class="text-uppercase" href="#">Kurumsal</a> 
-<div class="mb-sub-menu">
-<div class="mb-item"><a class="text-uppercase" href="#hakkimizda">Hakkımızda</a> </div>
-</div>
-</div>
-<div class="mb-item"><a class="text-uppercase" href="#faaliyet-alanlari">Faaliyet Alanları</a> </div>
-<div class="mb-item"><a class="text-uppercase" href="#haberler">Haberler</a> </div>
-<div class="mb-item"><a class="text-uppercase" href="#iletisim">İletişim</a> </div>
-</div>
-<div class="mb-social">
-<div class="sc">
-<a href="https://twitter.com/newtechmachineenergy
-" rel="external" target="_blank">
-<img src="wp-content/themes/newtech/images/hd-twitter.png" alt="twitter">
-</a>
-</div>
-<div class="sc">
-<a href="https://www.youtube.com/user/newtechmachineenergy
-Grubu" rel="external" target="_blank">
-<img src="wp-content/themes/newtech/images/hd-youtube.png" alt="youtube">
-</a>
-</div>
-<div class="sc">
-<a href="https://www.instagram.com/newtechmachineenergy
-/" rel="external" target="_blank">
-<img src="wp-content/themes/newtech/images/hd-instagram.png" alt="instagram">
-</a>
-</div>
-<div class="sc">
-<a href="https://www.linkedin.com/authwall?trk=qf&original_referer=https://www.newtechmachineenergy
-.com.tr/&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fnewtechmachineenergy
--holding%2Fabout%2F" rel="external" target="_blank">
-<img src="wp-content/themes/newtech/images/hd-linkedin.png" alt="linkedin">
-</a>
-</div>
-</div>
-</div>
 </header>
 <div class="full-search">
 <div class="bg full-searh-close"></div>
