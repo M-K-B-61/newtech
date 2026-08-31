@@ -559,12 +559,11 @@ Grubu" rel="external">
 </div>
 </div>
 <style>
-/* Slider kaldırıldı - sadece video ve tek arka plan görseli kalsın */
-.ibg-imgs { display: none !important; }
-.ibg-anim { display: none !important; }
-.ibg-init { display: none !important; }
-.ibg-init-video { position: absolute !important; inset: 0 !important; z-index: 1 !important; opacity: 1 !important; }
-.ibg-init-video video { position: absolute !important; top: 0; left: 0; width: 100% !important; height: 100% !important; object-fit: cover !important; }
+/* Slider kaldırıldı - video her zaman görünsün */
+.ibgs video { opacity: 1 !important; animation: none !important; z-index: 1 !important; }
+.ibg-init { z-index: 0 !important; }
+.ibg-init-video { z-index: 1 !important; }
+.ibg-init-video video { z-index: 1 !important; }
 </style>
 <div class="intro-lines" style="display:none;"><svg viewbox="0 0 1920 760" xmlns="http://www.w3.org/2000/svg">
 <path class="line-wide" opacity="1" d="M-6 759L1920 759" stroke-width="1.42" stroke-miterlimit="22.9256"></path>
