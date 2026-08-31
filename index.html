@@ -382,21 +382,20 @@ height: 18px;
 </head>
 <body>
 <header class="o-header" role="presentation">
-<div class="header-site-logo" id="ntm-logo-wrap" style="position: absolute; left: 50%; transform: translateX(-50%); z-index: 112;">
+<div class="header-site-logo" id="ntm-logo-wrap">
 <a href="index.htm" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
 <img src="mkbimg/newtech-logo.png" alt="New Tech Makina" style="height: 50px; width: 50px; border-radius: 50%; object-fit: cover;">
-<span style="font-family: Arial, Helvetica, sans-serif; font-weight: 800; font-style: italic; font-size: 24px; letter-spacing: 0.5px;"><span style="color: #fff;">NEW TECH</span> <span style="color: #D62828;">MAKİNA</span></span>
+<span class="ntm-text-main" style="font-family: Arial, Helvetica, sans-serif; font-weight: 800; font-style: italic; font-size: 24px; letter-spacing: 0.5px;"><span style="color: #fff;">NEW TECH</span> <span style="color: #D62828;">MAKİNA</span></span>
 </a>
 </div>
 
 <style>
   /* Beyaz yazı, varsayılan halde beyaz; sayfa kaydırıldığında siyaha geçer */
-  #ntm-logo-wrap .ntm-text-main {
-    fill: #ffffff;
-    transition: fill 0.25s ease;
+  #ntm-logo-wrap .ntm-text-main span {
+    transition: color 0.25s ease;
   }
-  body.ntm-scrolled #ntm-logo-wrap .ntm-text-main {
-    fill: #000000;
+  body.ntm-scrolled #ntm-logo-wrap .ntm-text-main span {
+    color: #000000 !important;
   }
 </style>
 
